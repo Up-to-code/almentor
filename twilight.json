@@ -841,7 +841,7 @@
             "key": "3dc36898-d397-4f3c-a3c5-b70aacba057f",
             "title": "cards",
             "icon": "sicon-android-tablet",
-            "path": "home.header",
+            "path": "home.cards",
             "fields": [
                 {
                     "id": "whatsapp_boox",
