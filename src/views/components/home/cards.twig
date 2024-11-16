@@ -1,49 +1,40 @@
 <div class="bg-[##1C1F1F] min-h-[500px] p-10 flex flex-col justify-center">
   <h2 class="text-white text-3xl font-bold mb-8 text-right">الباقات</h2>
-  <div class="flex-col flex md:flex-row w-full flex-wrap  justify-center gap-6 mt-10">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-2 lg:gap-4 flex-wrap"
+  >
     {% for product in component.products %}
-    <div class="pricing-item bg-red-500/5 w-[215px] flex-1 f">
+    <div class="pricing-item bg-red-500/5 w-full flex-1 f">
       <h3 class="text-lg font-semibold mb-2 text-white">{{ product.name }}</h3>
-      <div class="text-4xl font-bold text-red-500 flex items-end">
+      <div class="text-4xl font-bold text-red-500 flex items-end my-3">
         <span class="text-2xl mb-2">ريال</span>
         {{ product.price }}
         <span class="text-sm text-zinc-400">/ سنة</span>
       </div>
-      <p class="mt-2 text-gray-300">
-        وفرت
-        <span class="text-green-500 font-semibold">{{ product.savings }}</span>
-        ريال
+      <p class="mt-4 text-gray-300">
+        {{ product.subtitle }}
       </p>
-      <button
-        class="mt-4 w-full px-4 py-2 border border-white text-white rounded-md hover:bg-red-500  transition"
-      >
+      <salla-add-product-button product-id="{{ product.id }}">
         اشترك الآن
-      </button>
+      </salla-add-product-button>
     </div>
-    {% endfor %}
+    {% endfor %} {% for item in component.whatsapp_boox %}
 
-    {% for item in theme.settings.get('whatsapp_boox') %}
-        
-
-    <div class="pricing-item bg-red-500/5 w-[215px] flex-1 f"> 
-        <h3 class="text-lg font-semibold mb-2 text-white">أكثر من ثلاثة أشخاص
-        </h3>
-        <div class="text-4xl font-bold text-red-500 flex items-end">
-            بسرعة
-        </div>
-        <p class="mt-2 text-gray-300">
-    
-        </p>
-        <a href="{{item.url}}" target="_blank" class="text-white text-xl"></a>
-        <button
-          class="mt-4 w-full px-4 py-2 border border-white text-white rounded-md hover:bg-red-500  transition"
-        >
-          {{item.whatsapp_text_boox}}
-        </button>
+    <div class="pricing-item bg-red-500/5 w-full flex-1 f">
+      <h3 class="text-lg font-semibold mb-2 text-white">أكثر من ثلاثة أشخاص</h3>
+      <div class="text-4xl font-bold text-red-500 flex items-end my-4">
+        بسرعة
       </div>
 
+      <a
+        href="{{item.url}}"
+        target="_blank"
+        class="mt-14 w-full px-4 py-2 border border-white text-white rounded-md hover:bg-red-500 transition block text-lg text-center"
+      >
+        {{ item.whatsapp_text_boox }}
+      </a>
+    </div>
+
     {% endfor %}
-
-
   </div>
 </div>
