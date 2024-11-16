@@ -941,7 +941,50 @@
             "title": "header",
             "icon": "sicon-image1",
             "path": "home.header",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title_one",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title_one",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "long_text",
+                    "type": "string",
+                    "format": "richtext",
+                    "label": "long_text",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Your text here ..",
+                    "icon": "sicon-touch-type",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 60,
+                    "maxLength": 1000
+                },
+                {
+                    "id": "image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                }
+            ]
         }
     ],
     "support_url": "https://almentor.fehm.io/",
